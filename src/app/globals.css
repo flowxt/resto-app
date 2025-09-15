@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf9f7;
+  --foreground: #3c2414;
+  
+  /* Palette couleurs nudes/chalet */
+  --nude-50: #faf9f7;
+  --nude-100: #f4f1eb;
+  --nude-200: #e8e1d6;
+  --nude-300: #dcc8b8;
+  --nude-400: #c9a88a;
+  --nude-500: #b8906f;
+  --nude-600: #a67b5b;
+  --nude-700: #8b6747;
+  --nude-800: #72563c;
+  --nude-900: #5c4532;
+  --nude-950: #3c2414;
+  
+  /* Couleurs accent chalet */
+  --chalet-warm: #d4a574;
+  --chalet-wood: #8b6b3d;
+  --chalet-stone: #7d6c5e;
+  --chalet-gold: #c5956b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Polices */
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-lora); 
+  --font-ui: var(--font-inter);
+  
+  /* Couleurs personnalisées */
+  --color-nude-50: var(--nude-50);
+  --color-nude-100: var(--nude-100);
+  --color-nude-200: var(--nude-200);
+  --color-nude-300: var(--nude-300);
+  --color-nude-400: var(--nude-400);
+  --color-nude-500: var(--nude-500);
+  --color-nude-600: var(--nude-600);
+  --color-nude-700: var(--nude-700);
+  --color-nude-800: var(--nude-800);
+  --color-nude-900: var(--nude-900);
+  --color-nude-950: var(--nude-950);
+  
+  --color-chalet-warm: var(--chalet-warm);
+  --color-chalet-wood: var(--chalet-wood);
+  --color-chalet-stone: var(--chalet-stone);
+  --color-chalet-gold: var(--chalet-gold);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #3c2414;
+    --foreground: #faf9f7;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-lora), Georgia, serif;
+}
+
+/* Styles de base pour les polices */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 600;
+}
+
+p, span, div {
+  font-family: var(--font-lora), Georgia, serif;
+}
+
+button, input, select, textarea {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
 }

@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// 🍽️ Modèle pour les réservations de restaurant
+model Reservation {
+  id        String   @id @default(cuid())  // ID unique automatique
+  
+  // 📅 Informations de réservation
+  date      DateTime                       // Date de la réservation
+  time      String                         // Heure (ex: "19:30")
+  guests    Int                           // Nombre de personnes
+  
+  // 👤 Informations client
+  name      String                        // Nom complet
+  phone     String                        // Téléphone (obligatoire)
+  email     String?                       // Email (optionnel avec ?)
+  message   String?                       // Message particulier (optionnel)
+  
+  // 📊 Statut et gestion
+  status    ReservationStatus @default(PENDING)  // Statut par défaut
+  
+  // 🕐 Timestamps automatiques
+  createdAt DateTime @default(now())       // Créé automatiquement
+  updatedAt DateTime @updatedAt            // Mis à jour automatiquement
+  
+  @@map("reservations")  // Nom de la table en base
+}
+
+// 📋 Les différents statuts possibles
+enum ReservationStatus {
+  PENDING   // En attente de confirmation
+  CONFIRMED // Confirmée
+  CANCELLED // Annulée
+  COMPLETED // Terminée
+}
+
+// ⏰ Modèle pour gérer les créneaux horaires
+model TimeSlot {
+  id        String  @id @default(cuid())
+  time      String  @unique              // "12:00", "12:30", etc.
+  maxTables Int     @default(10)         // Nombre max de tables pour ce créneau
+  isActive  Boolean @default(true)       // Si le créneau est actif
+  
+  @@map("time_slots")
+}
+
+// 🚫 Modèle pour bloquer certaines dates (fermetures, événements privés)
+model BlockedDate {
+  id     String   @id @default(cuid())
+  date   DateTime @unique               // Date bloquée
+  reason String?                       // Raison du blocage (optionnel)
+  
+  @@map("blocked_dates")
+}
