@@ -40,6 +40,7 @@ export async function GET(request) {
         pending: reservations.filter(r => r.status === 'PENDING').length,
         cancelled: reservations.filter(r => r.status === 'CANCELLED').length,
         completed: reservations.filter(r => r.status === 'COMPLETED').length,
+        late: reservations.filter(r => r.status === 'LATE').length,
       }
     };
 

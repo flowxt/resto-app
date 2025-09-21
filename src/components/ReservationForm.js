@@ -156,6 +156,26 @@ export default function ReservationForm() {
         </div>
 
         <div className="bg-nude-50 rounded-lg shadow-lg p-8 border border-nude-200">
+          {/* ⏰ RÈGLE DES 20 MINUTES */}
+          <div className="mb-6 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg">
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <span className="text-2xl">⏰</span>
+              </div>
+              <div className="ml-3">
+                <h3 className="font-ui font-semibold text-amber-800 mb-1">
+                  Politique de Ponctualité
+                </h3>
+                <p className="text-sm text-amber-700 font-body">
+                  <strong>Attention :</strong> Les tables seront automatiquement
+                  réattribuées si vous n'êtes pas présents dans les{" "}
+                  <strong>20 minutes</strong> suivant l'heure de votre
+                  réservation. Merci de nous prévenir en cas de retard !
+                </p>
+              </div>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Date et heure */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -1,112 +1,165 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import AdminLayout from '@/components/AdminLayout'
-import ReservationCard from '@/components/ReservationCard'
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import AdminLayout from "@/components/AdminLayout";
+import ReservationCard from "@/components/ReservationCard";
 
 export default function AdminDashboard() {
-  const [reservations, setReservations] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0])
+  const [reservations, setReservations] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedDate, setSelectedDate] = useState(
+    new Date().toISOString().split("T")[0]
+  );
   const [stats, setStats] = useState({
-    today: { total: 0, confirmed: 0, pending: 0 },
+    today: { total: 0, confirmed: 0, pending: 0, late: 0 },
     midi: { total: 0, remaining: 0 },
     soir1: { total: 0, remaining: 0 },
-    soir2: { total: 0, remaining: 0 }
-  })
-  const router = useRouter()
+    soir2: { total: 0, remaining: 0 },
+  });
+  const [checkingLate, setCheckingLate] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     // Vérifier l'authentification
-    if (typeof window !== 'undefined' && !localStorage.getItem('adminAuth')) {
-      router.push('/admin')
-      return
+    if (
+      typeof window !== "undefined" &&
+      !localStorage.getItem("adminLoggedIn")
+    ) {
+      router.push("/admin");
+      return;
     }
-    
-    fetchReservations()
-  }, [selectedDate])
+
+    fetchReservations();
+  }, [selectedDate]);
 
   const fetchReservations = async () => {
     try {
-      setLoading(true)
-      const response = await fetch(`/api/admin/reservations?date=${selectedDate}`)
-      
+      setLoading(true);
+      const response = await fetch(
+        `/api/admin/reservations?date=${selectedDate}`
+      );
+
       if (!response.ok) {
-        throw new Error('Erreur lors du chargement')
+        throw new Error("Erreur lors du chargement");
       }
 
-      const data = await response.json()
-      setReservations(data.reservations || [])
-      setStats(data.stats || stats)
+      const data = await response.json();
+      setReservations(data.reservations || []);
+      setStats(data.stats || stats);
     } catch (error) {
-      console.error('Erreur:', error)
+      console.error("Erreur:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
+
+  const checkLateReservations = async () => {
+    try {
+      setCheckingLate(true);
+      const response = await fetch("/api/admin/check-late-reservations", {
+        method: "POST",
+      });
+
+      if (!response.ok) {
+        throw new Error("Erreur lors de la vérification");
+      }
+
+      const data = await response.json();
+      console.log("Vérification des retards:", data);
+
+      // Recharger les réservations après vérification
+      await fetchReservations();
+
+      if (data.lateCount > 0) {
+        alert(
+          `${data.lateCount} réservation(s) marquée(s) en retard automatiquement.`
+        );
+      } else {
+        alert("Aucune réservation en retard détectée.");
+      }
+    } catch (error) {
+      console.error("Erreur:", error);
+      alert("Erreur lors de la vérification des retards");
+    } finally {
+      setCheckingLate(false);
+    }
+  };
 
   const updateReservationStatus = async (reservationId, newStatus) => {
     try {
       const response = await fetch(`/api/admin/reservations/${reservationId}`, {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ status: newStatus })
-      })
+        body: JSON.stringify({ status: newStatus }),
+      });
 
       if (response.ok) {
         // Recharger les réservations
-        fetchReservations()
+        fetchReservations();
       }
     } catch (error) {
-      console.error('Erreur mise à jour:', error)
+      console.error("Erreur mise à jour:", error);
     }
-  }
+  };
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'CONFIRMED': return 'bg-green-100 text-green-800'
-      case 'CANCELLED': return 'bg-red-100 text-red-800'
-      case 'COMPLETED': return 'bg-blue-100 text-blue-800'
-      default: return 'bg-orange-100 text-orange-800'
+      case "CONFIRMED":
+        return "bg-green-100 text-green-800";
+      case "CANCELLED":
+        return "bg-red-100 text-red-800";
+      case "COMPLETED":
+        return "bg-blue-100 text-blue-800";
+      case "LATE":
+        return "bg-amber-100 text-amber-800";
+      default:
+        return "bg-orange-100 text-orange-800";
     }
-  }
+  };
 
   const getStatusText = (status) => {
     switch (status) {
-      case 'PENDING': return 'En attente'
-      case 'CONFIRMED': return 'Confirmée'
-      case 'CANCELLED': return 'Annulée'
-      case 'COMPLETED': return 'Terminée'
-      default: return status
+      case "PENDING":
+        return "En attente";
+      case "CONFIRMED":
+        return "Confirmée";
+      case "CANCELLED":
+        return "Annulée";
+      case "COMPLETED":
+        return "Terminée";
+      case "LATE":
+        return "🚨 En retard";
+      default:
+        return status;
     }
-  }
+  };
 
   const groupReservationsByTime = (reservations) => {
     const grouped = {
       midi: [],
       soir1: [],
-      soir2: []
-    }
+      soir2: [],
+    };
 
-    reservations.forEach(reservation => {
-      const [hours] = reservation.time.split(':').map(Number)
-      
+    reservations.forEach((reservation) => {
+      const [hours] = reservation.time.split(":").map(Number);
+
       if (hours >= 11 && hours <= 14) {
-        grouped.midi.push(reservation)
+        grouped.midi.push(reservation);
       } else if (hours >= 19 && hours < 20.5) {
-        grouped.soir1.push(reservation)
+        grouped.soir1.push(reservation);
       } else if (hours >= 20.5 && hours <= 22) {
-        grouped.soir2.push(reservation)
+        grouped.soir2.push(reservation);
       }
-    })
+    });
 
-    return grouped
-  }
+    return grouped;
+  };
 
-  const groupedReservations = groupReservationsByTime(reservations)
+  const groupedReservations = groupReservationsByTime(reservations);
 
   if (loading) {
     return (
@@ -118,7 +171,7 @@ export default function AdminDashboard() {
           </div>
         </div>
       </AdminLayout>
-    )
+    );
   }
 
   return (
@@ -135,7 +188,7 @@ export default function AdminDashboard() {
                 Gérez vos réservations et suivez l'occupation
               </p>
             </div>
-            
+
             <div className="flex items-center gap-4">
               <input
                 type="date"
@@ -144,10 +197,27 @@ export default function AdminDashboard() {
                 className="px-3 py-2 border border-nude-300 rounded-md focus:outline-none focus:ring-2 focus:ring-chalet-wood bg-white text-nude-900"
               />
               <button
-                onClick={() => setSelectedDate(new Date().toISOString().split('T')[0])}
+                onClick={() =>
+                  setSelectedDate(new Date().toISOString().split("T")[0])
+                }
                 className="px-4 py-2 bg-chalet-wood text-nude-50 rounded-md hover:bg-nude-800 font-ui text-sm"
               >
                 Aujourd'hui
+              </button>
+
+              <button
+                onClick={checkLateReservations}
+                disabled={checkingLate}
+                className="px-4 py-2 bg-amber-500 text-white rounded-md hover:bg-amber-600 font-ui text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              >
+                {checkingLate ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                    Vérification...
+                  </>
+                ) : (
+                  <>⏰ Vérifier retards</>
+                )}
               </button>
             </div>
           </div>
@@ -156,29 +226,43 @@ export default function AdminDashboard() {
         {/* Statistiques rapides */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="bg-nude-50 p-4 rounded-lg border border-nude-200">
-            <h3 className="font-ui font-semibold text-nude-700 text-sm">Total du jour</h3>
-            <p className="font-heading text-2xl font-bold text-nude-900">{stats.today.total}</p>
+            <h3 className="font-ui font-semibold text-nude-700 text-sm">
+              Total du jour
+            </h3>
+            <p className="font-heading text-2xl font-bold text-nude-900">
+              {stats.today.total}
+            </p>
             <p className="font-body text-sm text-nude-600">réservations</p>
           </div>
-          
+
           <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-            <h3 className="font-ui font-semibold text-green-700 text-sm">Confirmées</h3>
-            <p className="font-heading text-2xl font-bold text-green-800">{stats.today.confirmed}</p>
+            <h3 className="font-ui font-semibold text-green-700 text-sm">
+              Confirmées
+            </h3>
+            <p className="font-heading text-2xl font-bold text-green-800">
+              {stats.today.confirmed}
+            </p>
             <p className="font-body text-sm text-green-600">validées</p>
           </div>
-          
+
           <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
-            <h3 className="font-ui font-semibold text-orange-700 text-sm">En attente</h3>
-            <p className="font-heading text-2xl font-bold text-orange-800">{stats.today.pending}</p>
+            <h3 className="font-ui font-semibold text-orange-700 text-sm">
+              En attente
+            </h3>
+            <p className="font-heading text-2xl font-bold text-orange-800">
+              {stats.today.pending}
+            </p>
             <p className="font-body text-sm text-orange-600">à traiter</p>
           </div>
-          
-          <div className="bg-chalet-warm/20 p-4 rounded-lg border border-chalet-warm/30">
-            <h3 className="font-ui font-semibold text-chalet-wood text-sm">Occupation</h3>
-            <p className="font-heading text-2xl font-bold text-nude-900">
-              {stats.today.total > 0 ? Math.round((stats.today.confirmed / stats.today.total) * 100) : 0}%
+
+          <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+            <h3 className="font-ui font-semibold text-amber-700 text-sm">
+              En Retard
+            </h3>
+            <p className="font-heading text-2xl font-bold text-amber-800">
+              {stats.today.late || 0}
             </p>
-            <p className="font-body text-sm text-nude-600">du jour</p>
+            <p className="font-body text-sm text-amber-600">réservations</p>
           </div>
         </div>
 
@@ -194,10 +278,10 @@ export default function AdminDashboard() {
                 {groupedReservations.midi.length} réservations
               </span>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {groupedReservations.midi.length > 0 ? (
-                groupedReservations.midi.map(reservation => (
+                groupedReservations.midi.map((reservation) => (
                   <ReservationCard
                     key={reservation.id}
                     reservation={reservation}
@@ -224,10 +308,10 @@ export default function AdminDashboard() {
                 {groupedReservations.soir1.length} réservations
               </span>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {groupedReservations.soir1.length > 0 ? (
-                groupedReservations.soir1.map(reservation => (
+                groupedReservations.soir1.map((reservation) => (
                   <ReservationCard
                     key={reservation.id}
                     reservation={reservation}
@@ -254,10 +338,10 @@ export default function AdminDashboard() {
                 {groupedReservations.soir2.length} réservations
               </span>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {groupedReservations.soir2.length > 0 ? (
-                groupedReservations.soir2.map(reservation => (
+                groupedReservations.soir2.map((reservation) => (
                   <ReservationCard
                     key={reservation.id}
                     reservation={reservation}
@@ -276,5 +360,5 @@ export default function AdminDashboard() {
         </div>
       </div>
     </AdminLayout>
-  )
+  );
 }

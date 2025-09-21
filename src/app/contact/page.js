@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Contact - Restaurant & Bar à Fromage Savoie",
@@ -13,13 +14,14 @@ export default function Contact() {
       <Navbar />
 
       {/* Header */}
-      <section className="bg-gradient-to-r from-chalet-stone to-nude-700 text-nude-50 py-20 mt-20">
+      <section className="bg-gradient-to-r from-chalet-wood to-nude-700 text-nude-50 py-20 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
             Contactez-nous
           </h1>
-          <p className="font-body text-xl max-w-2xl mx-auto">
-            Une question ? Une réservation ? Nous sommes là pour vous aider !
+          <p className="font-body text-xl max-w-3xl mx-auto">
+            Une question ? Une réservation ? Une privatisation ? Nous sommes là
+            pour vous aider !
           </p>
         </div>
       </section>
@@ -30,8 +32,8 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Informations de contact */}
             <div>
-              <h2 className="font-heading text-3xl font-bold text-nude-900 mb-8">
-                Nos Coordonnées
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                Nos coordonnées
               </h2>
 
               <div className="space-y-6">
@@ -58,23 +60,21 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg font-semibold text-nude-900">
+                    <h3 className="text-lg font-semibold text-gray-900">
                       Adresse
                     </h3>
-                    <p className="font-body text-nude-700">
+                    <p className="text-gray-600">
                       123 Rue de la Montagne
                       <br />
                       73000 Chambéry, Savoie
-                      <br />
-                      France
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-orange-100 p-3 rounded-lg mr-4">
+                  <div className="bg-chalet-gold/20 p-3 rounded-lg mr-4">
                     <svg
-                      className="w-6 h-6 text-orange-600"
+                      className="w-6 h-6 text-chalet-wood"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -96,9 +96,9 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-orange-100 p-3 rounded-lg mr-4">
+                  <div className="bg-chalet-gold/20 p-3 rounded-lg mr-4">
                     <svg
-                      className="w-6 h-6 text-orange-600"
+                      className="w-6 h-6 text-chalet-wood"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -122,9 +122,9 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-orange-100 p-3 rounded-lg mr-4">
+                  <div className="bg-chalet-gold/20 p-3 rounded-lg mr-4">
                     <svg
-                      className="w-6 h-6 text-orange-600"
+                      className="w-6 h-6 text-chalet-wood"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -139,29 +139,29 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">
-                      Horaires d'ouverture
+                      Horaires
                     </h3>
                     <div className="text-gray-600 space-y-1">
                       <p>
-                        <strong>Mardi - Dimanche :</strong> 11h30 - 14h30
+                        <strong>Déjeuner :</strong> 11h30 - 14h30
                       </p>
                       <p>
-                        <strong>Jeudi - Samedi :</strong> 18h30 - 22h30
+                        <strong>Dîner :</strong> 18h30 - 22h30
                       </p>
-                      <p>
-                        <strong>Lundi :</strong> Fermé
+                      <p className="text-red-600">
+                        <strong>Fermé le lundi</strong>
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Services */}
-              <div className="mt-12">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Nos Services
+              {/* Services disponibles */}
+              <div className="mt-8">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  Nos services
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-semibold text-gray-900">Restaurant</h4>
                     <p className="text-sm text-gray-600">
@@ -182,10 +182,12 @@ export default function Contact() {
                       Livraison France - Fromages d'exception
                     </p>
                   </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-900">Événements</h4>
+                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                    <h4 className="font-semibold text-gray-900">
+                      🏠 Privatisation
+                    </h4>
                     <p className="text-sm text-gray-600">
-                      Privatisation - Groupes
+                      Événements privés - Devis sur mesure
                     </p>
                   </div>
                 </div>
@@ -198,121 +200,7 @@ export default function Contact() {
                 Envoyez-nous un message
               </h2>
 
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      htmlFor="firstname"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Prénom *
-                    </label>
-                    <input
-                      type="text"
-                      id="firstname"
-                      name="firstname"
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="lastname"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Nom *
-                    </label>
-                    <input
-                      type="text"
-                      id="lastname"
-                      name="lastname"
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Téléphone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Sujet *
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  >
-                    <option value="">Choisir un sujet</option>
-                    <option value="reservation">Réservation restaurant</option>
-                    <option value="bar-fromage">Commande bar à fromage</option>
-                    <option value="boutique">Boutique en ligne</option>
-                    <option value="evenement">Événement privé</option>
-                    <option value="autre">Autre</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    placeholder="Décrivez votre demande..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-md font-medium transition-colors"
-                >
-                  Envoyer le message
-                </button>
-
-                <p className="text-sm text-gray-500">
-                  * Champs obligatoires. Nous vous répondrons dans les 24h.
-                </p>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>

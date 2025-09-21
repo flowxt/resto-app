@@ -41,6 +41,7 @@ enum ReservationStatus {
   CONFIRMED // Confirmée
   CANCELLED // Annulée
   COMPLETED // Terminée
+  LATE      // En retard (>20min après l'heure de réservation)
 }
 
 // ⏰ Modèle pour gérer les créneaux horaires
