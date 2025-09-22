@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import AdminLayout from "@/components/AdminLayout";
 import ReservationCard from "@/components/ReservationCard";
@@ -20,20 +20,7 @@ export default function AdminDashboard() {
   const [checkingLate, setCheckingLate] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    // Vérifier l&apos;authentification
-    if (
-      typeof window !== "undefined" &&
-      !localStorage.getItem("adminLoggedIn")
-    ) {
-      router.push("/admin");
-      return;
-    }
-
-    fetchReservations();
-  }, [selectedDate, fetchReservations, router]);
-
-  const fetchReservations = async () => {
+  const fetchReservations = useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch(
@@ -52,7 +39,20 @@ export default function AdminDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedDate]);
+
+  useEffect(() => {
+    // Vérifier l&apos;authentification
+    if (
+      typeof window !== "undefined" &&
+      !localStorage.getItem("adminLoggedIn")
+    ) {
+      router.push("/admin");
+      return;
+    }
+
+    fetchReservations();
+  }, [fetchReservations, router]);
 
   const checkLateReservations = async () => {
     try {
