@@ -26,7 +26,7 @@ export const metadata = {
   title: "Restaurant & Bar à Fromage - Savoie",
   description:
     "Concept unique : bar à fromage avec click & collect, restaurant savoyard et boutique de fromages d'exception. Découvrez nos spécialités savoyardes en Savoie.",
-  version: "1.0.1",
+  version: "1.0.2",
 };
 
 export default function RootLayout({ children }) {
