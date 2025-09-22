@@ -1,46 +1,49 @@
-'use client'
+"use client";
 
-import import { useState } from 'react' from 'react'
-import import { useRouter } from 'next/navigation' from 'next/navigation'
-import import Image from 'next/image' from 'next/image'
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function AdminLogin() {
   const [formData, setFormData] = useState({
-    username: &apos;&apos;,
-    password: &apos;&apos;
-  })
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(&apos;&apos;)
-  const router = useRouter()
+    username: "",
+    password: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError(&apos;&apos;)
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
 
     try {
       // Pour simplifier, on utilise des identifiants en dur
       // En production, vous voudrez une vraie authentification
-      if (formData.username === &apos;admin&apos; && formData.password === &apos;restaurant2024&apos;) {
+      if (
+        formData.username === "admin" &&
+        formData.password === "restaurant2024"
+      ) {
         // Stocker une session simple
-        localStorage.setItem(&apos;adminAuth&apos;, &apos;true&apos;)
-        router.push(&apos;/admin/dashboard&apos;)
+        localStorage.setItem("adminAuth", "true");
+        router.push("/admin/dashboard");
       } else {
-        setError(&apos;Identifiants incorrects&apos;)
+        setError("Identifiants incorrects");
       }
     } catch (err) {
-      setError(&apos;Erreur de connexion&apos;)
+      setError("Erreur de connexion");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-nude-100 via-nude-50 to-chalet-warm/20 flex items-center justify-center p-4">
@@ -58,9 +61,7 @@ export default function AdminLogin() {
           <h1 className="font-heading text-3xl font-bold text-nude-900 mb-2">
             Administration
           </h1>
-          <p className="font-body text-nude-700">
-            Gestion des réservations
-          </p>
+          <p className="font-body text-nude-700">Gestion des réservations</p>
         </div>
 
         {/* Formulaire de connexion */}
@@ -73,7 +74,10 @@ export default function AdminLogin() {
             )}
 
             <div>
-              <label htmlFor="username" className="block text-sm font-ui font-medium text-nude-800 mb-2">
+              <label
+                htmlFor="username"
+                className="block text-sm font-ui font-medium text-nude-800 mb-2"
+              >
                 Nom d&apos;utilisateur
               </label>
               <input
@@ -89,7 +93,10 @@ export default function AdminLogin() {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-ui font-medium text-nude-800 mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-ui font-medium text-nude-800 mb-2"
+              >
                 Mot de passe
               </label>
               <input
@@ -109,24 +116,28 @@ export default function AdminLogin() {
               disabled={isLoading}
               className={`w-full py-3 px-4 rounded-md font-ui font-semibold transition-all duration-300 ${
                 isLoading
-                  ? &apos;bg-nude-400 cursor-not-allowed&apos;
-                  : &apos;bg-chalet-wood hover:bg-nude-800 focus:ring-2 focus:ring-chalet-wood focus:ring-offset-2&apos;
+                  ? "bg-nude-400 cursor-not-allowed"
+                  : "bg-chalet-wood hover:bg-nude-800 focus:ring-2 focus:ring-chalet-wood focus:ring-offset-2"
               } text-nude-50`}
             >
-              {isLoading ? &apos;Connexion...&apos; : &apos;Se connecter&apos;}
+              {isLoading ? "Connexion..." : "Se connecter"}
             </button>
           </form>
 
           {/* Informations de test */}
           <div className="mt-6 p-4 bg-chalet-warm/10 rounded-md border border-chalet-warm/20">
             <p className="text-sm font-ui text-nude-700 text-center">
-              <strong>Identifiants de test :</strong><br />
-              Utilisateur : <code className="bg-nude-200 px-1 rounded">admin</code><br />
-              Mot de passe : <code className="bg-nude-200 px-1 rounded">restaurant2024</code>
+              <strong>Identifiants de test :</strong>
+              <br />
+              Utilisateur :{" "}
+              <code className="bg-nude-200 px-1 rounded">admin</code>
+              <br />
+              Mot de passe :{" "}
+              <code className="bg-nude-200 px-1 rounded">restaurant2024</code>
             </p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
