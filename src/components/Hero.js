@@ -56,9 +56,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Décoration en bas */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-nude-50 to-transparent"></div>
     </section>
   );
 }
