@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body
         className={`${playfairDisplay.variable} ${lora.variable} ${inter.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
         {children}
       </body>
