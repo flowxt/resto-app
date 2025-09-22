@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function ContactForm() {
+function ContactFormContent() {
   const searchParams = useSearchParams();
   const isPrivatisation = searchParams?.get("privatisation") === "true";
 
@@ -253,5 +253,13 @@ export default function ContactForm() {
         </button>
       </form>
     </div>
+  );
+}
+
+export default function ContactForm() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center">Chargement...</div>}>
+      <ContactFormContent />
+    </Suspense>
   );
 }
