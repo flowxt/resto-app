@@ -140,7 +140,7 @@ export default function ReservationForm() {
     });
   };
 
-  // Date minimum (aujourd'hui)
+  // Date minimum (aujourd&apos;hui)
   const today = new Date().toISOString().split("T")[0];
 
   return (
@@ -168,8 +168,8 @@ export default function ReservationForm() {
                 </h3>
                 <p className="text-sm text-amber-700 font-body">
                   <strong>Attention :</strong> Les tables seront automatiquement
-                  réattribuées si vous n'êtes pas présents dans les{" "}
-                  <strong>20 minutes</strong> suivant l'heure de votre
+                  réattribuées si vous n&apos;êtes pas présents dans les{" "}
+                  <strong>20 minutes</strong> suivant l&apos;heure de votre
                   réservation. Merci de nous prévenir en cas de retard !
                 </p>
               </div>
@@ -375,7 +375,7 @@ export default function ReservationForm() {
                   appeler
                 </li>
                 <li>
-                  • En cas d'allergie, merci de nous prévenir lors de la
+                  • En cas d&apos;allergie, merci de nous prévenir lors de la
                   réservation
                 </li>
               </ul>

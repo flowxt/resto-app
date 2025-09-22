@@ -13,7 +13,7 @@ export default function ContactForm() {
     phone: "",
     subject: isPrivatisation ? "privatisation" : "general",
     message: isPrivatisation
-      ? "Bonjour, je souhaiterais obtenir des informations concernant la privatisation du restaurant pour un événement privé.\n\nDétails de mon événement :\n- Date souhaitée :\n- Nombre de personnes :\n- Type d'événement :\n- Budget estimé :\n\nMerci pour votre retour."
+      ? "Bonjour, je souhaiterais obtenir des informations concernant la privatisation du restaurant pour un événement privé.\n\nDétails de mon événement :\n- Date souhaitée :\n- Nombre de personnes :\n- Type d&apos;événement :\n- Budget estimé :\n\nMerci pour votre retour."
       : "",
   });
 
@@ -42,7 +42,7 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Simulation d'envoi (à remplacer par votre API)
+    // Simulation d&apos;envoi (à remplacer par votre API)
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulation
       setSubmitStatus({
@@ -65,7 +65,7 @@ export default function ContactForm() {
       setSubmitStatus({
         type: "error",
         message:
-          "Erreur lors de l'envoi. Veuillez réessayer ou nous appeler directement.",
+          "Erreur lors de l&apos;envoi. Veuillez réessayer ou nous appeler directement.",
       });
     } finally {
       setIsSubmitting(false);
@@ -190,7 +190,7 @@ export default function ContactForm() {
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-chalet-wood focus:border-chalet-wood text-nude-900"
             placeholder={
               formData.subject === "privatisation"
-                ? "Décrivez votre événement : date, nombre de personnes, type d'événement, budget..."
+                ? "Décrivez votre événement : date, nombre de personnes, type d&apos;événement, budget..."
                 : "Décrivez votre demande en détail..."
             }
           ></textarea>
@@ -204,7 +204,7 @@ export default function ContactForm() {
             <ul className="text-sm text-blue-800 font-body space-y-1">
               <li>• Date et horaires souhaités</li>
               <li>• Nombre exact de convives</li>
-              <li>• Type d'événement (anniversaire, mariage, entreprise...)</li>
+              <li>• Type d&apos;événement (anniversaire, mariage, entreprise...)</li>
               <li>• Préférences menu (fondue, raclette, buffet...)</li>
               <li>• Budget approximatif par personne</li>
               <li>• Services souhaités (animation, décoration...)</li>

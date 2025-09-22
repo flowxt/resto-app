@@ -15,7 +15,7 @@ export default function Restaurant() {
       icon: "🏔️",
       title: "Ambiance Montagne",
       description:
-        "Décor authentique bois et pierre dans l'esprit vieux chalet alpin",
+        "Décor authentique bois et pierre dans l&apos;esprit vieux chalet alpin",
     },
     {
       icon: "🔥",
@@ -27,7 +27,7 @@ export default function Restaurant() {
       icon: "🍷",
       title: "Cave à Vins",
       description:
-        "Sélection de crus de Savoie et vins d'altitude pour accompagner vos plats",
+        "Sélection de crus de Savoie et vins d&apos;altitude pour accompagner vos plats",
     },
     {
       icon: "👨‍🍳",
@@ -61,7 +61,7 @@ export default function Restaurant() {
               Restaurant Savoyard
             </h1>
             <p className="font-body text-xl md:text-2xl text-nude-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Dans l'authenticité de notre chalet, nous vous attendons avec
+              Dans l&apos;authenticité de notre chalet, nous vous attendons avec
               plaisir pour partager les vraies saveurs de la Savoie autour de
               nos spécialités traditionnelles
             </p>
@@ -78,7 +78,7 @@ export default function Restaurant() {
         </div>
       </section>
 
-      {/* Message d'accueil chaleureux */}
+      {/* Message d&apos;accueil chaleureux */}
       <section className="py-16 bg-nude-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-nude-50 rounded-lg p-8 border border-nude-200 shadow-lg">
@@ -89,7 +89,7 @@ export default function Restaurant() {
             <p className="font-body text-xl text-nude-700 mb-6 leading-relaxed">
               Dans notre restaurant, chaque repas est une célébration des
               traditions savoyardes. Notre équipe passionnée vous accueille dans
-              la chaleur d'un véritable chalet pour vous faire découvrir les
+              la chaleur d&apos;un véritable chalet pour vous faire découvrir les
               authentiques saveurs de nos montagnes.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -105,7 +105,7 @@ export default function Restaurant() {
               <div className="text-center">
                 <div className="text-3xl mb-2">🌟</div>
                 <h3 className="font-heading font-semibold text-nude-900">
-                  Produits d'Exception
+                  Produits d&apos;Exception
                 </h3>
                 <p className="text-sm text-nude-600 font-body">
                   Fromages AOP et produits locaux sélectionnés
@@ -376,7 +376,7 @@ export default function Restaurant() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl font-bold text-nude-900 mb-4">
-              L'Ambiance de Notre Chalet
+              L&apos;Ambiance de Notre Chalet
             </h2>
             <p className="font-body text-xl text-nude-700">
               Un cadre authentique pour des moments inoubliables
@@ -502,7 +502,7 @@ export default function Restaurant() {
                   </h4>
                 </div>
                 <p className="text-sm text-amber-700 font-body">
-                  Les tables seront réattribuées si vous n'êtes pas présents
+                  Les tables seront réattribuées si vous n&apos;êtes pas présents
                   dans les
                   <strong> 20 minutes</strong> suivant votre heure de
                   réservation.

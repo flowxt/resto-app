@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from &apos;next/image&apos;
+import Link from &apos;next/link&apos;
 
 export default function Footer() {
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
             <p className="font-body text-nude-200 mb-4">
               Concept unique alliant bar à fromage, restaurant savoyard et boutique en ligne. 
-              Une expérience gastronomique authentique autour des fromages d'exception.
+              Une expérience gastronomique authentique autour des fromages d&apos;exception.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-nude-300 hover:text-chalet-warm transition-colors">

@@ -21,7 +21,7 @@ export default function AdminDashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    // Vérifier l'authentification
+    // Vérifier l&apos;authentification
     if (
       typeof window !== "undefined" &&
       !localStorage.getItem("adminLoggedIn")
@@ -185,7 +185,7 @@ export default function AdminDashboard() {
                 Réservations du jour
               </h1>
               <p className="font-body text-nude-600">
-                Gérez vos réservations et suivez l'occupation
+                Gérez vos réservations et suivez l&apos;occupation
               </p>
             </div>
 
@@ -202,7 +202,7 @@ export default function AdminDashboard() {
                 }
                 className="px-4 py-2 bg-chalet-wood text-nude-50 rounded-md hover:bg-nude-800 font-ui text-sm"
               >
-                Aujourd'hui
+                Aujourd&apos;hui
               </button>
 
               <button

@@ -71,14 +71,14 @@ export default function FromageGrid() {
     },
     {
       id: 5,
-      name: "Beaufort d'Alpage AOP",
+      name: "Beaufort d&apos;Alpage AOP",
       category: "pate-dure",
       type: "fromage",
       prices: {
         "500g": 32.0,
         "1kg": 60.0,
       },
-      description: "Fromage d'alpage au lait cru de vache, production estivale",
+      description: "Fromage d&apos;alpage au lait cru de vache, production estivale",
       origin: "Savoie",
       image: "/images/fromage.jpg",
       inStock: true,
@@ -151,7 +151,7 @@ export default function FromageGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-nude-900 mb-4">
-            Boutique Fromages d'Exception
+            Boutique Fromages d&apos;Exception
           </h2>
           <p className="font-body text-xl text-nude-700 max-w-2xl mx-auto">
             Découvrez notre sélection de fromages artisanaux avec livraison
@@ -183,7 +183,7 @@ export default function FromageGrid() {
               key={fromage.id}
               className="bg-nude-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-nude-200 relative"
             >
-              {/* Badges d'état */}
+              {/* Badges d&apos;état */}
               <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
                 {!fromage.inStock && (
                   <span className="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-ui font-semibold">
@@ -245,7 +245,7 @@ export default function FromageGrid() {
                   </div>
                 </div>
 
-                {/* Boutons d'action */}
+                {/* Boutons d&apos;action */}
                 <div className="space-y-2">
                   {fromage.inStock ? (
                     <>
@@ -308,7 +308,7 @@ export default function FromageGrid() {
           </h3>
           <p className="font-body text-blue-700">
             Notre boutique en ligne sera bientôt intégrée avec Shopify pour une
-            expérience d'achat optimale. En attendant, contactez-nous pour
+            expérience d&apos;achat optimale. En attendant, contactez-nous pour
             passer commande par téléphone.
           </p>
         </div>

@@ -22,16 +22,16 @@ export default function Hero() {
       <div className="relative z-10 flex items-center h-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-nude-50 mb-6 leading-tight">
-            L'Art du Fromage
+            L&apos;Art du Fromage
             <br />
             <span className="text-chalet-gold">&amp; de la Gastronomie</span>
             <br />
             <span className="text-chalet-warm">Savoyarde</span>
           </h1>
           <p className="font-body text-lg md:text-xl lg:text-2xl text-nude-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Dans l'authenticité d'un vieux chalet alpin, découvrez notre concept
+            Dans l&apos;authenticité d&apos;un vieux chalet alpin, découvrez notre concept
             unique : bar à fromage avec 40 places ou click &amp; collect,
-            restaurant savoyard traditionnel et boutique de fromages d'exception
+            restaurant savoyard traditionnel et boutique de fromages d&apos;exception
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

@@ -179,7 +179,7 @@ export default function Contact() {
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-semibold text-gray-900">Boutique</h4>
                     <p className="text-sm text-gray-600">
-                      Livraison France - Fromages d'exception
+                      Livraison France - Fromages d&apos;exception
                     </p>
                   </div>
                   <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">

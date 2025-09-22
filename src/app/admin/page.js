@@ -1,16 +1,16 @@
-'use client'
+&apos;use client&apos;
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import Image from 'next/image'
+import { useState } from &apos;react&apos;
+import { useRouter } from &apos;next/navigation&apos;
+import Image from &apos;next/image&apos;
 
 export default function AdminLogin() {
   const [formData, setFormData] = useState({
-    username: '',
-    password: ''
+    username: &apos;&apos;,
+    password: &apos;&apos;
   })
   const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState('')
+  const [error, setError] = useState(&apos;&apos;)
   const router = useRouter()
 
   const handleChange = (e) => {
@@ -23,20 +23,20 @@ export default function AdminLogin() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
-    setError('')
+    setError(&apos;&apos;)
 
     try {
       // Pour simplifier, on utilise des identifiants en dur
       // En production, vous voudrez une vraie authentification
-      if (formData.username === 'admin' && formData.password === 'restaurant2024') {
+      if (formData.username === &apos;admin&apos; && formData.password === &apos;restaurant2024&apos;) {
         // Stocker une session simple
-        localStorage.setItem('adminAuth', 'true')
-        router.push('/admin/dashboard')
+        localStorage.setItem(&apos;adminAuth&apos;, &apos;true&apos;)
+        router.push(&apos;/admin/dashboard&apos;)
       } else {
-        setError('Identifiants incorrects')
+        setError(&apos;Identifiants incorrects&apos;)
       }
     } catch (err) {
-      setError('Erreur de connexion')
+      setError(&apos;Erreur de connexion&apos;)
     } finally {
       setIsLoading(false)
     }
@@ -74,7 +74,7 @@ export default function AdminLogin() {
 
             <div>
               <label htmlFor="username" className="block text-sm font-ui font-medium text-nude-800 mb-2">
-                Nom d'utilisateur
+                Nom d&apos;utilisateur
               </label>
               <input
                 type="text"
@@ -109,11 +109,11 @@ export default function AdminLogin() {
               disabled={isLoading}
               className={`w-full py-3 px-4 rounded-md font-ui font-semibold transition-all duration-300 ${
                 isLoading
-                  ? 'bg-nude-400 cursor-not-allowed'
-                  : 'bg-chalet-wood hover:bg-nude-800 focus:ring-2 focus:ring-chalet-wood focus:ring-offset-2'
+                  ? &apos;bg-nude-400 cursor-not-allowed&apos;
+                  : &apos;bg-chalet-wood hover:bg-nude-800 focus:ring-2 focus:ring-chalet-wood focus:ring-offset-2&apos;
               } text-nude-50`}
             >
-              {isLoading ? 'Connexion...' : 'Se connecter'}
+              {isLoading ? &apos;Connexion...&apos; : &apos;Se connecter&apos;}
             </button>
           </form>
 
