@@ -99,39 +99,66 @@ export default function Reservation() {
                 Découvrez quelques-unes de nos spécialités
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-4xl mb-2">🥗</div>
-                <h4 className="font-heading font-semibold text-nude-900 text-sm">SALADES</h4>
-                <p className="text-xs text-nude-600 font-body">Chèvre chaud, César, Burrata</p>
-                <p className="text-xs font-ui text-chalet-wood font-semibold mt-1">dès 10€</p>
+                <h4 className="font-heading font-semibold text-nude-900 text-sm">
+                  SALADES
+                </h4>
+                <p className="text-xs text-nude-600 font-body">
+                  Chèvre chaud, César, Burrata
+                </p>
+                <p className="text-xs font-ui text-chalet-wood font-semibold mt-1">
+                  dès 10€
+                </p>
               </div>
-              
+
               <div className="text-center">
                 <div className="text-4xl mb-2">🫕</div>
-                <h4 className="font-heading font-semibold text-nude-900 text-sm">FONDUES</h4>
-                <p className="text-xs text-nude-600 font-body">Moitié/Moitié, Échalotte, Karnotzet</p>
-                <p className="text-xs font-ui text-chalet-wood font-semibold mt-1">dès 26€</p>
+                <h4 className="font-heading font-semibold text-nude-900 text-sm">
+                  FONDUES
+                </h4>
+                <p className="text-xs text-nude-600 font-body">
+                  Moitié/Moitié, Échalotte, Karnotzet
+                </p>
+                <p className="text-xs font-ui text-chalet-wood font-semibold mt-1">
+                  dès 26€
+                </p>
               </div>
-              
+
               <div className="text-center">
                 <div className="text-4xl mb-2">🧀</div>
-                <h4 className="font-heading font-semibold text-nude-900 text-sm">RACLETTES</h4>
-                <p className="text-xs text-nude-600 font-body">Nature, Fumé, Ail des ours</p>
-                <p className="text-xs font-ui text-chalet-wood font-semibold mt-1">dès 24€</p>
+                <h4 className="font-heading font-semibold text-nude-900 text-sm">
+                  RACLETTES
+                </h4>
+                <p className="text-xs text-nude-600 font-body">
+                  Nature, Fumé, Ail des ours
+                </p>
+                <p className="text-xs font-ui text-chalet-wood font-semibold mt-1">
+                  dès 24€
+                </p>
               </div>
-              
+
               <div className="text-center">
                 <div className="text-4xl mb-2">🍽️</div>
-                <h4 className="font-heading font-semibold text-nude-900 text-sm">SPÉCIALITÉS</h4>
-                <p className="text-xs text-nude-600 font-body">Tartiflette, Croziflette, Morbiflette</p>
-                <p className="text-xs font-ui text-chalet-wood font-semibold mt-1">dès 21€</p>
+                <h4 className="font-heading font-semibold text-nude-900 text-sm">
+                  SPÉCIALITÉS
+                </h4>
+                <p className="text-xs text-nude-600 font-body">
+                  Tartiflette, Croziflette, Morbiflette
+                </p>
+                <p className="text-xs font-ui text-chalet-wood font-semibold mt-1">
+                  dès 21€
+                </p>
               </div>
             </div>
-            
+
             <div className="text-center mt-6">
-              <a href="/restaurant" className="bg-chalet-wood hover:bg-nude-800 text-nude-50 px-6 py-2 rounded-lg font-ui text-sm transition-colors inline-flex items-center gap-2">
+              <a
+                href="/restaurant"
+                className="bg-chalet-wood hover:bg-nude-800 text-nude-50 px-6 py-2 rounded-lg font-ui text-sm transition-colors inline-flex items-center gap-2"
+              >
                 <span>📋</span>
                 Voir la carte complète
               </a>
@@ -227,8 +254,8 @@ export default function Reservation() {
             <div className="bg-white rounded-lg p-6 shadow-sm border border-amber-200">
               <p className="font-body text-lg text-amber-800 mb-4">
                 <strong>Attention :</strong> Vos tables seront automatiquement
-                réattribuées si vous n'êtes pas présents dans les{" "}
-                <strong>20 minutes</strong> suivant l'heure de votre
+                réattribuées si vous n&apos;êtes pas présents dans les{" "}
+                <strong>20 minutes</strong> suivant l&apos;heure de votre
                 réservation.
               </p>
 

@@ -369,7 +369,7 @@ export default function ReservationForm() {
                 <li>
                   • Réservation confirmée après notre appel de confirmation
                 </li>
-                <li>• Annulation gratuite jusqu'à 2h avant le service</li>
+                <li>• Annulation gratuite jusqu&apos;à 2h avant le service</li>
                 <li>
                   • Pour les groupes de plus de 8 personnes, merci de nous
                   appeler
