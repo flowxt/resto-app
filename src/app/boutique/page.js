@@ -5,7 +5,7 @@ import FromageGrid from "@/components/FromageGrid";
 export const metadata = {
   title: "Boutique de Fromages - Livraison France | Restaurant & Bar à Fromage",
   description:
-    "Découvrez notre sélection de fromages d&apos;exception. Livraison partout en France. Fromages artisanaux de Savoie et spécialités fromagères.",
+    "Découvrez notre sélection de fromages d'exception. Livraison partout en France. Fromages artisanaux de Savoie et spécialités fromagères.",
 };
 
 export default function Boutique() {
@@ -17,7 +17,7 @@ export default function Boutique() {
       <section className="bg-gradient-to-r from-chalet-wood to-nude-700 text-nude-50 py-20 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
-            Boutique de Fromages d&apos;Exception
+            Boutique de Fromages d'Exception
           </h1>
           <p className="font-body text-xl mb-6 max-w-3xl mx-auto">
             Découvrez notre sélection de fromages artisanaux avec nouvelle

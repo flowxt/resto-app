@@ -13,7 +13,7 @@ export default function ContactForm() {
     phone: "",
     subject: isPrivatisation ? "privatisation" : "general",
     message: isPrivatisation
-      ? "Bonjour, je souhaiterais obtenir des informations concernant la privatisation du restaurant pour un événement privé.\n\nDétails de mon événement :\n- Date souhaitée :\n- Nombre de personnes :\n- Type d&apos;événement :\n- Budget estimé :\n\nMerci pour votre retour."
+      ? "Bonjour, je souhaiterais obtenir des informations concernant la privatisation du restaurant pour un événement privé.\n\nDétails de mon événement :\n- Date souhaitée :\n- Nombre de personnes :\n- Type d'événement :\n- Budget estimé :\n\nMerci pour votre retour."
       : "",
   });
 
@@ -42,7 +42,7 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Simulation d&apos;envoi (à remplacer par votre API)
+    // Simulation d'envoi (à remplacer par votre API)
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulation
       setSubmitStatus({

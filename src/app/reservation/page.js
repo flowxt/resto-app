@@ -227,8 +227,8 @@ export default function Reservation() {
             <div className="bg-white rounded-lg p-6 shadow-sm border border-amber-200">
               <p className="font-body text-lg text-amber-800 mb-4">
                 <strong>Attention :</strong> Vos tables seront automatiquement
-                réattribuées si vous n&apos;êtes pas présents dans les{" "}
-                <strong>20 minutes</strong> suivant l&apos;heure de votre
+                réattribuées si vous n'êtes pas présents dans les{" "}
+                <strong>20 minutes</strong> suivant l'heure de votre
                 réservation.
               </p>
 

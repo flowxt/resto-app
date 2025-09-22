@@ -15,7 +15,7 @@ export default function Restaurant() {
       icon: "🏔️",
       title: "Ambiance Montagne",
       description:
-        "Décor authentique bois et pierre dans l&apos;esprit vieux chalet alpin",
+        "Décor authentique bois et pierre dans l'esprit vieux chalet alpin",
     },
     {
       icon: "🔥",
@@ -27,7 +27,7 @@ export default function Restaurant() {
       icon: "🍷",
       title: "Cave à Vins",
       description:
-        "Sélection de crus de Savoie et vins d&apos;altitude pour accompagner vos plats",
+        "Sélection de crus de Savoie et vins d'altitude pour accompagner vos plats",
     },
     {
       icon: "👨‍🍳",

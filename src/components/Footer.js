@@ -1,5 +1,5 @@
-import Image from &apos;next/image&apos;
-import Link from &apos;next/link&apos;
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
   return (

@@ -1,8 +1,8 @@
-&apos;use client&apos;
+'use client'
 
-import { useState } from &apos;react&apos;
-import { useRouter } from &apos;next/navigation&apos;
-import Image from &apos;next/image&apos;
+import import { useState } from 'react' from 'react'
+import import { useRouter } from 'next/navigation' from 'next/navigation'
+import import Image from 'next/image' from 'next/image'
 
 export default function AdminLogin() {
   const [formData, setFormData] = useState({

@@ -71,14 +71,14 @@ export default function FromageGrid() {
     },
     {
       id: 5,
-      name: "Beaufort d&apos;Alpage AOP",
+      name: "Beaufort d'Alpage AOP",
       category: "pate-dure",
       type: "fromage",
       prices: {
         "500g": 32.0,
         "1kg": 60.0,
       },
-      description: "Fromage d&apos;alpage au lait cru de vache, production estivale",
+      description: "Fromage d'alpage au lait cru de vache, production estivale",
       origin: "Savoie",
       image: "/images/fromage.jpg",
       inStock: true,
