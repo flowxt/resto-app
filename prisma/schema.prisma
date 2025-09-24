@@ -62,3 +62,45 @@ model BlockedDate {
   
   @@map("blocked_dates")
 }
+
+// 🧀 Modèle pour les commandes de planches click & collect
+model CommandePlanche {
+  id                   String   @id @default(cuid())
+  
+  // 👤 Informations client
+  name                 String                        // Nom complet
+  email                String                        // Email du client
+  phone                String                        // Téléphone
+  
+  // 📅 Informations de récupération
+  dateRecuperation     DateTime                      // Date de récupération
+  creneauRecuperation  String                        // Créneau horaire (ex: "11h", "14h30")
+  
+  // 🧀 Informations sur la planche
+  plancheId            String                        // ID de la planche commandée
+  plancheName          String                        // Nom de la planche
+  planchePrice         Float                         // Prix unitaire de la planche
+  quantite             Int      @default(1)          // Quantité commandée
+  total                Float                         // Prix total de la commande
+  
+  // 🚨 Informations spéciales
+  allergies            String?                       // Allergies du client (optionnel)
+  commentaires         String?                       // Commentaires particuliers (optionnel)
+  
+  // 📊 Statut de la commande
+  status               CommandeStatus @default(PENDING)
+  
+  // 🕐 Timestamps automatiques
+  createdAt            DateTime @default(now())      // Créé automatiquement
+  updatedAt            DateTime @updatedAt           // Mis à jour automatiquement
+  
+  @@map("commandes_planches")
+}
+
+// 📋 Les différents statuts des commandes de planches
+enum CommandeStatus {
+  PENDING   // En attente de préparation
+  READY     // Prête pour récupération
+  COMPLETED // Récupérée par le client
+  CANCELLED // Annulée
+}
