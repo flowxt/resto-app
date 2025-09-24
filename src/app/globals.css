@@ -21,7 +21,9 @@
   --chalet-warm: #d4a574;
   --chalet-wood: #8b6b3d;
   --chalet-stone: #7d6c5e;
-  --chalet-gold: #c5956b;
+  --chalet-gold: #f4c430;
+  --chalet-gold-light: #ffd700;
+  --chalet-gold-dark: #b8860b;
 }
 
 @theme inline {
@@ -50,6 +52,8 @@
   --color-chalet-wood: var(--chalet-wood);
   --color-chalet-stone: var(--chalet-stone);
   --color-chalet-gold: var(--chalet-gold);
+  --color-chalet-gold-light: var(--chalet-gold-light);
+  --color-chalet-gold-dark: var(--chalet-gold-dark);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -77,4 +81,25 @@ p, span, div {
 
 button, input, select, textarea {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+/* Text shadows pour meilleure lisibilité navbar */
+.text-shadow-dark {
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.9), 
+    1px 1px 2px rgba(0, 0, 0, 1),
+    0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.text-shadow-light {
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.text-shadow-lg {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7), 1px 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.text-shadow-md {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
