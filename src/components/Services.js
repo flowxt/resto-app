@@ -40,65 +40,81 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-nude-200 to-nude-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-nude-900 mb-4">
-            Nos Services
+    <section className="py-20 bg-gradient-to-b from-amber-900 via-stone-800 to-amber-950 relative">
+      {/* Texture bois authentique */}
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D2691E' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      ></div>
+
+      {/* Overlay bois vieilli */}
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-800/30 via-transparent to-stone-900/40"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          {/* Badge artisanal */}
+          <div className="inline-flex items-center bg-amber-200/20 backdrop-blur-sm border border-amber-300/50 rounded-full px-6 py-2 mb-6">
+            <span className="text-amber-200 text-sm font-medium">
+              ⭐ Nos Spécialités Alpines
+            </span>
+          </div>
+
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-amber-100 mb-6 drop-shadow-lg">
+            L&apos;Art de Vivre Savoyard
           </h2>
-          <p className="font-body text-xl text-nude-700 max-w-2xl mx-auto">
-            Trois expériences uniques autour de notre passion pour les fromages
-            et la gastronomie savoyarde
+          <p className="font-body text-xl text-amber-200/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+            Trois expériences authentiques dans l&apos;esprit d&apos;un vieux
+            chalet alpin, où tradition et modernité se rencontrent autour de
+            notre passion pour les fromages d&apos;exception
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-nude-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-nude-200"
+              className="group bg-gradient-to-b from-amber-100 to-stone-100 rounded-2xl shadow-2xl overflow-hidden hover:shadow-amber-900/50 transition-all duration-500 transform hover:-translate-y-2 border-2 border-amber-400/60 hover:border-amber-300 relative backdrop-blur-sm"
             >
-              <div className="relative h-48">
+              {/* Badge numéro */}
+              <div className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-br from-amber-700 to-amber-900 text-amber-50 rounded-full flex items-center justify-center font-bold text-xl z-20 shadow-xl border-2 border-amber-500/50">
+                {index + 1}
+              </div>
+
+              <div className="relative h-56 overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-nude-900/20 to-transparent"></div>
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-amber-900/60 via-transparent to-stone-900/20"></div>
 
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-heading text-xl font-bold text-nude-900">
-                    {service.title}
-                  </h3>
-                  <span className="text-sm text-chalet-wood font-ui font-medium">
+                {/* Overlay chalet */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <span className="inline-block bg-amber-800/80 backdrop-blur-sm text-amber-100 text-xs font-medium px-3 py-1 rounded-full border border-amber-600/40">
                     {service.capacity}
                   </span>
                 </div>
+              </div>
 
-                <p className="font-body text-nude-700 mb-4">
+              <div className="p-8">
+                <h3 className="font-heading text-2xl font-bold text-stone-900 mb-3 group-hover:text-amber-800 transition-colors">
+                  {service.title}
+                </h3>
+
+                <p className="font-body text-stone-700 mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-3 mb-8">
                   {service.features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center text-sm text-nude-700 font-body"
+                      className="flex items-center text-sm text-stone-700 font-body"
                     >
-                      <svg
-                        className="w-4 h-4 text-chalet-gold mr-2"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      <div className="w-2 h-2 bg-amber-600 rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
@@ -106,7 +122,7 @@ export default function Services() {
 
                 <Link
                   href={service.link}
-                  className="w-full bg-chalet-wood hover:bg-nude-800 text-nude-50 px-4 py-2 rounded-md text-center font-ui font-medium transition-all duration-300 block shadow-md hover:shadow-lg"
+                  className="w-full bg-gradient-to-r from-amber-800 to-amber-700 hover:from-amber-700 hover:to-amber-600 text-amber-50 px-6 py-3 rounded-xl text-center font-semibold transition-all duration-300 block shadow-lg hover:shadow-xl group-hover:scale-105 border border-amber-600/30"
                 >
                   {service.cta}
                 </Link>
