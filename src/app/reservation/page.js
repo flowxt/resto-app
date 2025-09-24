@@ -21,7 +21,7 @@ export default function Reservation() {
             Réservation Restaurant
           </h1>
           <p className="font-body text-xl mb-6 max-w-2xl mx-auto">
-            Réservez votre table pour découvrir nos spécialités savoyardes dans
+            Réservez votre place pour découvrir nos spécialités savoyardes dans
             une ambiance chaleureuse
           </p>
           <div className="flex justify-center items-center space-x-4 text-sm">
@@ -253,8 +253,8 @@ export default function Reservation() {
 
             <div className="bg-white rounded-lg p-6 shadow-sm border border-amber-200">
               <p className="font-body text-lg text-amber-800 mb-4">
-                <strong>Attention :</strong> Vos tables seront automatiquement
-                réattribuées si vous n&apos;êtes pas présents dans les{" "}
+                <strong>Attention :</strong> Votre place sera automatiquement
+                réattribuée si vous n&apos;êtes pas présents dans les{" "}
                 <strong>20 minutes</strong> suivant l&apos;heure de votre
                 réservation.
               </p>
@@ -270,7 +270,7 @@ export default function Reservation() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-lg mr-2">🕐</span>
-                  <span>Soyez ponctuel pour garantir votre table</span>
+                  <span>Soyez ponctuel pour garantir votre place</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-lg mr-2">🤝</span>

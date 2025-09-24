@@ -29,9 +29,10 @@ export default function Hero() {
             <span className="text-chalet-warm">Savoyarde</span>
           </h1>
           <p className="font-body text-lg md:text-xl lg:text-2xl text-nude-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Dans l&apos;authenticité d&apos;un vieux chalet alpin, découvrez notre concept
-            unique : bar à fromage avec 40 places ou click &amp; collect,
-            restaurant savoyard traditionnel et boutique de fromages d&apos;exception
+            Dans l&apos;authenticité d&apos;un vieux chalet alpin, découvrez
+            notre concept unique : bar à fromage avec 40 places ou click &amp;
+            collect, restaurant savoyard traditionnel et boutique de fromages
+            d&apos;exception
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -39,7 +40,7 @@ export default function Hero() {
               href="/reservation"
               className="bg-chalet-wood hover:bg-nude-800 text-nude-50 px-8 py-4 rounded-lg text-lg font-ui font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
             >
-              Réserver une table
+              Réserver une place
             </Link>
             <Link
               href="/bar-fromage"

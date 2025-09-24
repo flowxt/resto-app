@@ -148,10 +148,11 @@ export default function ReservationForm() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl font-bold text-nude-900 mb-4">
-            Réserver une table
+            Réserver une place
           </h2>
           <p className="font-body text-xl text-nude-700">
-            Remplissez le formulaire ci-dessous pour réserver votre table
+            Remplissez le formulaire ci-dessous pour réserver votre place (40
+            places disponibles)
           </p>
         </div>
 
@@ -167,8 +168,8 @@ export default function ReservationForm() {
                   Politique de Ponctualité
                 </h3>
                 <p className="text-sm text-amber-700 font-body">
-                  <strong>Attention :</strong> Les tables seront automatiquement
-                  réattribuées si vous n&apos;êtes pas présents dans les{" "}
+                  <strong>Attention :</strong> Votre place sera automatiquement
+                  réattribuée si vous n&apos;êtes pas présents dans les{" "}
                   <strong>20 minutes</strong> suivant l&apos;heure de votre
                   réservation. Merci de nous prévenir en cas de retard !
                 </p>

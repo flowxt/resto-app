@@ -89,8 +89,8 @@ export default function Restaurant() {
             <p className="font-body text-xl text-nude-700 mb-6 leading-relaxed">
               Dans notre restaurant, chaque repas est une célébration des
               traditions savoyardes. Notre équipe passionnée vous accueille dans
-              la chaleur d&apos;un véritable chalet pour vous faire découvrir les
-              authentiques saveurs de nos montagnes.
+              la chaleur d&apos;un véritable chalet pour vous faire découvrir
+              les authentiques saveurs de nos montagnes.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <div className="text-center">
@@ -488,7 +488,7 @@ export default function Restaurant() {
               </h3>
 
               <p className="font-body text-lg mb-6 leading-relaxed">
-                Pour vous garantir la meilleure table et éviter toute déception,
+                Pour vous garantir la meilleure place et éviter toute déception,
                 nous vous recommandons vivement de réserver, surtout le week-end
                 !
               </p>
@@ -502,7 +502,7 @@ export default function Restaurant() {
                   </h4>
                 </div>
                 <p className="text-sm text-amber-700 font-body">
-                  Les tables seront réattribuées si vous n&apos;êtes pas présents
+                  Votre place sera réattribuée si vous n&apos;êtes pas présents
                   dans les
                   <strong> 20 minutes</strong> suivant votre heure de
                   réservation.
@@ -545,7 +545,7 @@ export default function Restaurant() {
                 href="/reservation"
                 className="block w-full bg-chalet-gold hover:bg-chalet-warm text-nude-950 text-center py-4 rounded-lg font-ui font-semibold text-lg transition-colors shadow-lg hover:shadow-xl"
               >
-                Réserver ma table
+                Réserver ma place
               </a>
             </div>
           </div>

@@ -19,7 +19,7 @@ export default function Services() {
         "Savourez nos spécialités savoyardes dans un cadre chaleureux. Fondue, raclette et plats traditionnels vous attendent.",
       image: "/images/fromage.jpg",
       features: ["40 places", "Spécialités savoyardes", "Ambiance chaleureuse"],
-      cta: "Réserver une table",
+      cta: "Réserver une place",
       link: "/reservation",
       capacity: "40 places assises",
     },
