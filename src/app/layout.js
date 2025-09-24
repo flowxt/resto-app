@@ -23,10 +23,10 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Restaurant & Bar à Fromage - Savoie",
+  title: "Le Karnotzet - Restaurant & Bar à Fromage - Saint Pierre en Faucigny",
   description:
-    "Concept unique : bar à fromage avec click & collect, restaurant savoyard et boutique de fromages d'exception. Découvrez nos spécialités savoyardes en Savoie.",
-  version: "1.0.2",
+    "Le Karnotzet, restaurant & bar à fromage savoyard à Saint Pierre en Faucigny. Bar à fromage 40 places, click & collect et boutique de fromages d'exception.",
+  version: "1.0.3",
 };
 
 export default function RootLayout({ children }) {
