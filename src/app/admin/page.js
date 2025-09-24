@@ -33,7 +33,7 @@ export default function AdminLogin() {
         formData.password === "restaurant2024"
       ) {
         // Stocker une session simple
-        localStorage.setItem("adminAuth", "true");
+        localStorage.setItem("adminLoggedIn", "true");
         router.push("/admin/dashboard");
       } else {
         setError("Identifiants incorrects");
